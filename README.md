@@ -106,3 +106,62 @@ assinaturas: uma conta pode ter diversas assinaturas mas uma assinatura so ta as
 ai entra a questão do controle de cobrança. que vai gerar separados para cada assinatura e necessidade, além do controle de acesso por uma questão de segurança
 
 grupos de gerenciamento: as mesmas regras são dadas as assinaturas que tiverem la dentro
+
+---
+
+antes de criar uma maquina virtual olha as opções que tem p marcar.
+
+é so digitar "grupo d recursos", selecionar a assinatura, nome desse grupo de recursos, local do datacenter, marcações no nome você coloca um subtítulo falando de onde veio ou pra que ele serve, pra saber quem vai pagar o que 
+
+Conjuntos de disponibilidade
+
+domínio de falhas é o  rack em si, e os dentro dele são domínios de atualização, e numero par, olhando  em vertical, tomar conta pra atualizarem em momentos diferentes, o domínio de falha é pro caso de ficar sem energia.
+
+área de trabalho virtual do azure:
+
+é tipo uma maquina virtual na nuvem, que da pra fazer todas as configurações e etc de acordo com o que a pessoa for precisar usar.
+conseguem usar e fazer mudanças em tempo real em diferentes áreas de trabalho virtuais
+
+serviços de container do azure:
+
+a maquina virtual exige certas coisas da maquina física, então as vs ela acabava não dando conta, pra isso serve o container, ele não torna necessária a criação de um sistema loperacional a parte (não entendi muito bem quando usar qual e etc).
+é um sistema leve de mini serviços
+
+o tipo dessa oferta é paas
+
+os apps de container são ofertas que servem para balancear a carga e colocação em escala
+
+aks: organizar os containers
+
+azure functions: modelo de execução baseada em eventos, é uma plataforma de serviço (não precisa de uma infraestrutura de servidor, elas avisam se acontecer algo e etc. é como se fosse o if da programação, se acontecer algo vc faz isso)
+
+maquinas virtuais: 
+
+servidor baseado em nuvem que da suporte a ambientes Windows ou Linux
+útil para migração de lifting and shifting para a nuvem. tem o sistema operacional completo (qual a diferença entre a área de trabalho? eles  são conectados so que um tem umas infos a mais? pq pelo que eu entendi a área de trabalho é a maquina virtual já instalada)
+
+serviços de aplicativos:
+
+plastaforma pra implantar e dimensionar apps web e apis rapidamente, também é um paas.
+
+serviços de rede:
+
+rede virtual (vnet): permite que os recursos se comunique, uns com os outros, tem as privadas e publicas.
+elas tem que ter um ip, tome cuidado com o que chamamos de "camada de rede", pois já temos nossas redes, ou seja, cuidado para não criar mais de um ip na mesma rede
+aqui na publica tem um vpn e express rout (mas esse é mais caro, ele é um cabo que conecta diretamente do seu cabo ate o da Microsoft)
+
+DNS do azure:
+
+é um resolvedor de nomes, é como se ao invés de dizer o cep ele fala seu endereço certinho
+
+Confiança 0: para que a segurança seja efetiva é necessário confirmar que o que o usuário quer acessar é realmente necessário, ele considera sempre o pior cenário, sempre pressupõem que algo foi violado, então vai ter sempre uma outra opção, por exemplo, pressupõe que sua segurança física foi passada, então ele consegue entrar, logo vc protege as outras camadas e assim sucessivamente, mas pensando que o atacante esta conseguindo passar por todas elas
+
+entra id Microsoft, ele verifica seu acesso e identidade se estão corretos, é como se sincronizasse aas identidades
+B2B negócios para negócios, B2C negócios para costumer = tipo fzr login por facebook
+So conecta uma vez, vc não precisa ficar colocando seus dados novamente se vc já provou que era vc 
+
+acesso condicional: monitora se os dados estão coerentes, se não estiver ele bloqueia (olha dados tipo ip, local e horário), bloqueia esse login caso esteja fora do padrão.
+
+acesso em função: se vc der um permissionamento alto pra uma pessoa ela vai ter acesso a tudo que tiver abaixo dele
+
+defender para nuvem: ele faz um monitoramento sobre o ambiente e vc pode selecionar quais que vc quer monitorar se não quiser em todos.
